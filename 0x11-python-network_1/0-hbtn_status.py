@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-"""
-This script fetches the status of https://alx-intranet.hbtn.io/status
-and displays the body of the response in a specific format.
-"""
+"""Fetches https://alx-intranet.hbtn.io/status"""
 
 import urllib.request
-if __name__ == "__main__":
-    url = 'https://alx-intranet.hbtn.io/status'
+
+def fetch_status():
+    """Fetches and prints the status of https://alx-intranet.hbtn.io"""
+    url = "https://alx-intranet.hbtn.io/status"
     with urllib.request.urlopen(url) as response:
-        data = response.read()
+        body = response.read()
 
     print("Body response:")
-    print("\t- type: {}".format(type(data)))
-    print("\t- content: {}".format(data.decode('utf-8')))
+    print("\t- type:", type(body))
+    print("\t- content:", body)
+    print("\t- utf8 content:", body.decode('utf-8'))
+
+if __name__ == "__main__":
+    fetch_status()
