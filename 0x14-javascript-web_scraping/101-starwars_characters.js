@@ -4,7 +4,7 @@ const request = require('request');
 
 const movieId = process.argv[2];
 
-const apiUrl = `https://swapi.dev/api/films/${movieId}/`;
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
 //  the 'request' module to perform an HTTP GET request to the Star Wars API URL.
 request(apiUrl, function (error, response, body) {
